@@ -20,3 +20,17 @@ def polynomial_regression(past_prices):
 
     # Returning the next value of each polynomial
     return pd.DataFrame({k:v.predict(PolynomialFeatures(degree=3).fit_transform(np.array([len(x)]).reshape((1,1)))) for k,v in models.items()})/past_prices.iloc[-1]
+
+if __name__ == "__main__":
+    ROOT='./kaggle/input/dt23-test/'
+    adjusted_close = pd.read_csv(ROOT+'series/adjusted_close.csv',index_col=0)
+    adjusted_close.index = pd.to_datetime(adjusted_close.index)
+    # Uncomment the following line to test the notebook on a reduced number of 
+    # products that span the entire makespan
+    adjusted_close = adjusted_close.dropna(axis=1).iloc[:,:20]
+
+    print(adjusted_close.head())
+
+    predicted_df = polynomial_regression(adjusted_close)
+
+    print(predicted_df.head())
