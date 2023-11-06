@@ -1,5 +1,5 @@
 # About
-This repository is Team 23's submission for the Polyfinance Datathon. Our team consists of three members, two of whom have some experience in trading, but not with quantitative strategies, and none of us have previous experience in machine learning.
+This repository is Team 23's submission for the 2023 Polyfinance Datathon. Our team consists of three members, two of whom have some experience in trading, but not with quantitative strategies, and none of us have previous experience in machine learning.
 
 ## Project Overview
 The goal of this project was to create a trading algorithm that operates within a specified historical period (2000-2015) with the aim of optimizing ROI. The strategy had to include at least 120 stocks from a pre-selected pool of 304 S&P 500 stocks, rebalance daily, and avoid using future information.
