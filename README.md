@@ -40,6 +40,8 @@ Feature selection was approached broadly; we included every indicator from works
 
 We observed that the LSTM, while effective at predicting actual prices with a slight delay, was not as successful at predicting returns, at least in our implementation. The model tended to predict very steady percentage variations close to 0%, contrasting with the real data's volatility. We considered adjusting the model to make less conservative predictions or questioning the daily resolution's effectiveness, but it's unclear how switching to a monthly or higher resolution would improve the results.
 
+A few things we observed was that feeding too many backcandles or stock indicators would tend to smooth out the predictions closer to 0 which is more and more wrong. Considering that the stock indicators are calculated from the basic OHLCV data and Central Limit Theorem we think this makes sense. We also noticed that making more layers gives better predictions but since it increased training time significantly on my base macbook air we decided to fo the feature engineering first. To do so, we reduced the layers and then wrote a wrapper to run every combination but still that was 33! combinations and impossible to finish within the constraints of time. The model you see in the files are the reduced models outputted by that process.
+
 We also experimented with polynomial and random forest models, but time and resource constraints limited these explorations. However as shown by the benchmark, a simple model with random weights performed extremely well so perhaps the winning strategy would have been way simpler.
 
 ### Miscellaneous
@@ -62,4 +64,4 @@ Optimizing for alpha, accounting for trading fees, and adhering to the challenge
  fundamental constraints were difficult, hindering the project's technical potential.
 
 ## Learning Outcomes
-Despite the setbacks, this project was a significant educational journey, offering insights into portfolio management and machine learning.
+Despite the setbacks, this project was a significant educational journey, offering insights into portfolio management and machine learning. We intend to keep working on this challenge, especially the prediction part.
