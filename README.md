@@ -49,7 +49,7 @@ the other notebooks contain our exploratory data analysis and other things. They
 
 ## What Was Envisioned But Not Implemented
 ### LSTM Model
-We planned to incorporate an LSTM model to account for industry distinctions in making predictions. Each symbol was split by correlation with the S&P and we intended to train one model per correlation bucket.
+We planned to incorporate an LSTM model to account for industry distinctions in making predictions. Each symbol was split by correlation with the S&P and we intended to train one model per correlation bucket. This is from the observation that stocks that have the same correlation to the S&P tend to correlate to each other which seems true enough generally.
 
 ### Cumulative Performance
 We calculated the cumulative percentage performance of individual S&P stocks versus the S&P 500 index, intending to inform stock selection through a moving average crossover strategy.
